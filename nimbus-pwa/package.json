@@ -1,0 +1,14 @@
+{
+  "name": "nimbus-pwa",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:api": "npm --prefix packages/api run dev",
+    "dev:web": "npm --prefix packages/web run dev",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "docker:up": "docker compose up -d",
+    "seed": "docker compose exec api node src/seed.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
