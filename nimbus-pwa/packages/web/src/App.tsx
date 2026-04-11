@@ -7,7 +7,7 @@ import SignupPage from './pages/SignupPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 
-const API_BASE = 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
 
 type Page = 'store' | 'login' | 'signup' | 'checkout' | 'success';
 
