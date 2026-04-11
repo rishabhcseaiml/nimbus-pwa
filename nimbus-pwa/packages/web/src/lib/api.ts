@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 import { QueueDB } from './db';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
 
 export async function createOrder(
   items: { productId: string; quantity: number }[],
