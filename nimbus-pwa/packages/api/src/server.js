@@ -21,13 +21,13 @@ app.use(compression());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  origin: ['http://localhost:5173', 'https://localhost:5173'],
-  credentials: true
-}));
+
+// ✅ Sirf ek CORS — sab fix
 app.use(cors({
   origin: true,
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Idempotency-Key']
 }));
 
 app.use('/api', idempotent);
@@ -40,7 +40,7 @@ app.use(errorHandler);
 
 const start = async () => {
   await connectDB();
-  app.listen(process.env.PORT, () => 
+  app.listen(process.env.PORT, () =>
     console.log(`API running on port ${process.env.PORT}`)
   );
 };
