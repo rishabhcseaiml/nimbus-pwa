@@ -1,6 +1,9 @@
 /// <reference types="vite/client" />
 import { QueueDB } from './db';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 14fa730 (fix: redeploy vercel blank page)
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
 
 export async function createOrder(
